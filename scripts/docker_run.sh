@@ -8,7 +8,7 @@ XSOCK=/tmp/.X11-unix && \
 docker run -it \
  -e DISPLAY=$DISPLAY \
  -v $XSOCK:$XSOCK \
- -v /LocalStorage/KITTI_odometry/dataset/:/kitti/ \
+ -v /media/lars/SSD/Semesterarbeit/Data_IAC/Datasets_Kitti_Style/Monza_Tunnel/:/kitti/ \
  --network=host \
  --privileged \
  rgbl:latest

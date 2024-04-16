@@ -1,0 +1,116 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+Camera.type: "PinHole"
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 1724.778859
+Camera.fy: 1723.969299
+Camera.cx: 489.853476
+Camera.cy: 250.216425
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+Camera.k3: 0.0
+
+Camera.bFishEye: 0
+
+Camera.width: 1032
+Camera.height: 772
+
+# Camera frames per second 
+Camera.fps: 10.0
+
+# IR projector baseline times fx (aprox.)
+Camera.bf: 100.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times.
+Stereo.ThDepth: 700.0
+
+# Deptmap values factor 
+RGBD.DepthMapFactor: 1000.0 #256.0
+
+#--------------------------------------------------------------------------------------------
+# LiDAR Parameters
+#--------------------------------------------------------------------------------------------
+# Rotation Translation Matrix from LiDAR to Camera Frame of reference
+LiDAR.Tr11: 0.06975647
+LiDAR.Tr12: -0.99756405
+LiDAR.Tr13: 0.0
+LiDAR.Tr14: 0.17462933
+LiDAR.Tr21: 0.08694344
+LiDAR.Tr22: 0.00607968
+LiDAR.Tr23: -0.9961947
+LiDAR.Tr24: -0.02189797
+LiDAR.Tr31: 0.99376802
+LiDAR.Tr32: 0.06949103
+LiDAR.Tr33: 0.08715574
+LiDAR.Tr34: 0.04802163
+
+# Option for Upsampling
+#LiDAR.Method: "NearestNeighborPixel"
+#LiDAR.Method: "AverageFiltering"
+LiDAR.Method: "InverseDilation"
+
+# Minimum and Maximum Distance to be considered during pointcloud projection
+LiDAR.min_dist: 5.0
+LiDAR.max_dist: 200.0
+
+# Method Specific Options
+# Only Consider the Options for the method you selected, all others may be ignored
+# Do not delete entries that are not required, just ignore them.
+
+# For Nearest Neighbor on Pixel Level
+LiDAR.MethodNearestNeighborPixel.SearchDistance: 7.0
+
+# For Average Filtering
+LiDAR.MethodAverageFiltering.bDoDilationPreprocessing: 1
+LiDAR.MethodAverageFiltering.DilationPreprocessing_KernelType: "Diamond"
+LiDAR.MethodAverageFiltering.DilationPreprocessing_KernelSize: 3.0
+LiDAR.MethodAverageFiltering.KernelSize: 5.0
+
+# For Inverse Dilation
+LiDAR.MethodInverseDilation.KernelType: "Diamond"
+LiDAR.MethodInverseDilation.KernelSize: 7.0
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 2000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 12
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.KeyFrameSize: 0.6
+Viewer.KeyFrameLineWidth: 2
+Viewer.GraphLineWidth: 1
+Viewer.PointSize:2
+Viewer.CameraSize: 0.7
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -100
+Viewer.ViewpointZ: -0.1
+Viewer.ViewpointF: 2000
+

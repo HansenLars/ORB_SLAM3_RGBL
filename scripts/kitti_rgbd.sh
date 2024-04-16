@@ -1,8 +1,8 @@
 #!/bin/bash
-pathDataset='/kitti/sequences/00/' #Example, it is necesary to change it by the dataset path
+pathDataset='/kitti/01/' #Example, it is necesary to change it by the dataset path
 
 #------------------------------------
 # Monocular Examples
 echo "Launching Kitti RGB-D Mode"
-./Examples/RGB-D/rgbd_kitti Vocabulary/ORBvoc.txt Examples/RGB-D/KITTI00-02.yaml "$pathDataset"
+./Examples/RGB-L/rgbl_kitti Vocabulary/ORBvoc.txt Examples/RGB-L/KITTI_AV21.yaml "$pathDataset"
 

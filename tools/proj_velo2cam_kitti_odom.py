@@ -10,16 +10,15 @@ from scipy.spatial.transform.rotation import Rotation
 import numpy.linalg as linalg
 import math
 
-sequence = "00"
-
-show_overlay = True
+sequence = "03" 
+show_overlay = False 
 
 cur_dir = os.path.abspath(os.path.dirname(__file__))
 
-dataset_path = "/home/lars/Data_IAC/Datasets_Kitti_Style/Monza_Tunnel"
+dataset_path = "/media/lars/SSD/Semesterarbeit/Data_IAC/Datasets_Kitti_Style/Monza_Tunnel" 
 
 image_path = os.path.join(dataset_path, sequence, "image_0")
-luminar_path = os.path.join(dataset_path, sequence,  "luminar_front")
+luminar_path = os.path.join(dataset_path, sequence,  "velodyne_points")
 calib_path = os.path.join(dataset_path, sequence)
 save_path = os.path.join(dataset_path, sequence, "depth_png")
 
@@ -109,6 +108,13 @@ for name in filelist:
 
     if show_overlay:
 
+ 
+        fig = plt.figure(1, figsize=(12,5), dpi=96, tight_layout=True) 
+        ax_3d = fig.add_subplot(1, 2, 1, projection='3d') 
+        ax_3d.view_init(elev=0, azim=-180) 
+        ax_2d = fig.add_subplot(1, 2, 2) 
+ 
+
         ax_2d.axis([0,IMG_W,IMG_H,0])
         ax_2d.imshow(png)
         # u = np.subtract(IMG_W,u)[0]
@@ -135,7 +141,7 @@ for name in filelist:
         # print(image_matrix[int(i), int(image_data[0, index])])
         index = index+1
 
-    im.imwrite(os.path.join(save_path, name + ".png"), im=(image_matrix))
+    # im.imwrite(os.path.join(save_path, name + ".png"), im=(image_matrix))
 
     print("Finished ", image_counter, " out of ", num_images) 
     image_counter += 1
