@@ -205,8 +205,8 @@ void LoadImages(const string &strPathToSequence, vector<string> &vstrImageFilena
     }
 
     cout << "Start Loading Images" << endl;
-    string strPrefixRGB = strPathToSequence + "image_2/";
-    string strPrefixPcd = strPathToSequence + "velodyne/";
+    string strPrefixRGB = strPathToSequence + "image_0/";
+    string strPrefixPcd = strPathToSequence + "velodyne_points/";
 
     const int nTimes = vTimestamps.size();
     vstrImageFilenamesRGB.resize(nTimes);
@@ -215,7 +215,7 @@ void LoadImages(const string &strPathToSequence, vector<string> &vstrImageFilena
     for (int i = 0; i < nTimes; i++){
         stringstream ss;
         ss << setfill('0') << setw(6) << i;
-        vstrImageFilenamesRGB[i] = strPrefixRGB + ss.str() + ".png";
+        vstrImageFilenamesRGB[i] = strPrefixRGB + ss.str() + ".jpg";
         vstrPcdFilenames[i] = strPrefixPcd + ss.str() + ".bin";
     }
 }

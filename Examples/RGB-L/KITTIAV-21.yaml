@@ -23,7 +23,7 @@ Camera.width: 1032
 Camera.height: 772
 
 # Camera frames per second 
-Camera.fps: 10.0
+Camera.fps: 10
 
 # IR projector baseline times fx (aprox.)
 Camera.bf: 100.0
@@ -81,7 +81,8 @@ LiDAR.MethodAverageFiltering.KernelSize: 5.0
 
 # For Inverse Dilation
 LiDAR.MethodInverseDilation.KernelType: "Diamond"
-LiDAR.MethodInverseDilation.KernelSize: 7.0
+LiDAR.MethodInverseDilation.KernelSize_u: 5.0 # width of the kernel
+LiDAR.MethodInverseDilation.KernelSize_v: 7.0 # height of the kernel; not considered in Diamond mode
 
 #--------------------------------------------------------------------------------------------
 # ORB Parameters
