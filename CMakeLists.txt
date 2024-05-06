@@ -187,8 +187,7 @@ target_link_libraries(rgbd_depth_kitti ${PROJECT_NAME})
 #Stereo examples
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Stereo)
 
-add_executable(stereo_kitti
-        Examples/Stereo/stereo_kitti.cc)
+add_executable(stereo_kitti Examples/Stereo/stereo_kitti.cc)
 target_link_libraries(stereo_kitti ${PROJECT_NAME})
 
 # add_executable(stereo_euroc

@@ -23,12 +23,14 @@ RUN apt-get update && apt-get install -y -q --no-install-recommends \
     python3-pip \
     git \
     vim \
+    gdb \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y -q cmake libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev \
     python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev \
     libglew-dev libboost-all-dev libssl-dev \
-    libeigen3-dev mesa-utils nano
+    libeigen3-dev mesa-utils nano \
+    libcanberra-gtk-module 
     # libjasper-dev
 
 # Generate and set locales
